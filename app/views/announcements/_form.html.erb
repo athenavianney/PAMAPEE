@@ -1,0 +1,69 @@
+<%= form_with model: @announcement, local: true do |form| %>
+	
+	<% if @announcement.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@announcement.errors.count, "error") %> prohibited
+				this announcement from being saved:
+			</h2>
+			<ul>
+				<% @announcement.errors.full_messages.each do |msg| %>
+				  <li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+  
+	<div class="container col-8">
+	  	<div class="form">
+				<%= form.label :course_name, 'Nombre Curso: ', class: " m-2 p-2" %><br>
+				<%= form.text_field :course_name, class: "form-control m-2 p-2" %>
+	  	</div>
+	  	
+	  	<div class="form">
+				<%= form.label :instructor, 'Instructor: ', class: "m-2 p-2" %><br>
+				<%= form.text_field :instructor, class: "form-control m-2 p-2" %>
+	  	</div>
+	  	
+	  	<div class="form-inline">
+				<%= form.label :start_registration, 'Inicio de inscripción: ', class: "m-2 p-2" %><br>
+				<%= form.date_field :start_registration, class: "form-control m-2 p-2" %>
+	  	</div>
+
+		
+		<div class="form-inline">
+				<%= form.label :end_registration, 'Fin de inscripción: ', class: "m-2 p-2" %><br>
+				<%= form.date_field :end_registration, class: "form-control m-2 p-2" %>
+	  	</div>
+
+	  	<div class="form-inline">
+				<%= form.label :length, 'Duración: ', class: "m-2 p-2" %><br>
+				<%= form.number_field :length, class: "form-control m-2 p-2" %>
+	  	</div>	
+	  	
+		<div class="form">
+				<%= form.label :schedule, 'Horario: ', class: "m-2 p-2" %><br>
+				<%= form.text_area :schedule, class: "form-control m-2 p-2" %>
+	  	</div>
+
+	  	<div class="form">
+				<%= form.label :location, 'Lugar: ', class: "m-2 p-2" %><br>
+				<%= form.text_area :location, class: "form-control m-2 p-2" %>
+	  	</div>
+	  	
+	  	<div class="form">
+				<%= form.label :summary, 'Objetivo general: ', class: "m-2 p-2" %><br>
+				<%= form.text_area :summary, class: "form-control m-2 p-2" %>
+	  	</div>
+
+	  	<div class="form">
+				<%= form.label :cv, 'Resumen instructor: ', class: "m-2 p-2" %><br>
+				<%= form.text_area :cv, class: "form-control m-2 p-2" %>
+	  	</div>
+
+	</div>
+	    <%= form.submit 'Guardar', :status => "guardar", class: "btn btn-success m-2 p-2" %>
+	    <%= form.submit 'Publicar', :status => "publish", class: "btn btn-success m-2 p-2" %>
+	    <%= link_to 'Regresar', announcements_path, class: "btn btn-primary" %>
+
+<% end %>

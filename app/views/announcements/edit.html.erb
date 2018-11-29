@@ -1,0 +1,122 @@
+<div class="container">
+    <div>
+    	<br>
+        <h1>Editar convocatoria del curso:
+            <%= @announcement.name_program %>
+        </h1>
+        <hr>
+    </div>
+</div>
+
+<%= form_with(model: @announcement, local: true) do |form| %>
+	<% if @announcement.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@announcement.errors.count, "error") %> prohibited
+				this announcement from being saved:
+			</h2>
+			<ul>
+				<% @announcement.errors.full_messages.each do |msg| %>
+				  <li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+  
+	<div class="container col-8">
+
+		<div class="row align-items-center m-2 p-2">
+	        <div class="col-3">
+	            <strong>Instructor:</strong>
+	        </div>
+	        <div class="col-5">
+				<%= @announcement.instructor %>
+			</div>
+	    </div>
+
+	    <div class="row align-items-center m-2 p-2">
+	        <div class="col-3">
+	        	<strong>Inicio inscripción:</strong>
+	    	</div>
+	        <div class="col-5">
+	            <%= @announcement.start_registration %>
+			</div>
+	    </div>
+
+	    <div class="row align-items-center m-2 p-2">
+	        <div class="col-3">
+				<strong>Fin inscripción:</strong>
+			</div>
+	        <div class="col-5">	
+				<%= @announcement.end_registration %>
+	        </div>
+	    </div>
+
+	    <div class="row align-items-center m-2 p-2">
+	        <div class="col-3">
+	            <strong>Inicio curso:</strong>
+	        </div>
+	        <div class="col-5">
+	            <%= @announcement.start_date %>
+	        </div>
+	    </div>
+
+	    <div class="row align-items-center m-2 p-2">
+	        <div class="col-3">
+	            <strong>Fin curso:</strong>
+	        </div>
+	        <div class="col-5"> 
+	            <%= @announcement.end_date %>
+	        </div>
+	    </div>
+
+	    <div class="row align-items m-2 p-2">
+	        <div class="col-3">
+	            <strong>Duracion:</strong>
+			</div>
+	        <div class="col-5">
+	        	<%= @announcement.length %>
+			</div>
+	    </div>
+	  	
+		<div class="form">
+				<%= form.label :schedule, 'Horario: ', class: "m-2 p-2" %><br>
+				<%= form.text_area :schedule, class: "form-control m-2 p-2" %>
+	  	</div>
+
+		<div class="form">
+				<%= form.label :faculty, 'División: ', class: "m-2 p-2" %><br>
+				<%= form.text_field :faculty, class: "form-control m-2 p-2" %>
+	  	</div>
+	  	
+	  	<div class="form">
+				<%= form.label :department, 'Departamento: ', class: "m-2 p-2" %><br>
+				<%= form.text_field :department, class: "form-control m-2 p-2" %>
+	  	</div>
+
+	  	<div class="form">
+				<%= form.label :classroom, 'Aula: ', class: "m-2 p-2" %><br>
+				<%= form.text_field :classroom, class: "form-control m-2 p-2" %>
+	  	</div>	  	
+
+	  	<div class="form">
+				<%= form.label :location, 'Lugar: ', class: "m-2 p-2" %><br>
+				<%= form.text_area :location, class: "form-control m-2 p-2" %>
+	  	</div>
+	  	
+	  	<div class="form">
+				<%= form.label :summary, 'Objetivo general: ', class: "m-2 p-2" %><br>
+				<%= form.text_area :summary, class: "form-control m-2 p-2" %>
+	  	</div>
+
+	  	<div class="form">
+				<%= form.label :cv_resume, 'Resumen cv instructor: ', class: "m-2 p-2" %><br>
+				<%= form.text_area :cv_resume, class: "form-control m-2 p-2" %>
+	  	</div>
+
+	</div>
+    <%= form.submit 'Guardar', :status => "guardar", class: "btn btn-success m-2 p-2" %>
+    <%= form.submit 'Publicar', :status => "publish", class: "btn btn-success m-2 p-2" %>
+    <%= link_to 'Regresar', announcements_path, class: "btn btn-primary" %>
+<% end %>
+

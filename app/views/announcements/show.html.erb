@@ -1,0 +1,136 @@
+<div class="container col-8">
+    <div>
+        <br>
+        <h1>Convocatoria del curso:
+            <%= @announcement.name_program %>
+        </h1>
+        <hr>
+    </div>
+
+    <hr>
+	<div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>Instructor:</strong>
+        </div>
+        <div class="col-5">
+			<%= @announcement.instructor %>
+		</div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+        	<strong>Inicio inscripción:</strong>
+    	</div>
+        <div class="col-5">
+            <%= @announcement.start_registration %>
+		</div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+			<strong>Fin inscripción:</strong>
+		</div>
+        <div class="col-5">	
+			<%= @announcement.end_registration %>
+        </div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>Inicio curso:</strong>
+        </div>
+        <div class="col-5">
+            <%= @announcement.start_date %>
+        </div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>Fin curso:</strong>
+        </div>
+        <div class="col-5"> 
+            <%= @announcement.end_date %>
+        </div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>Duracion:</strong>
+		</div>
+        <div class="col-5">
+        	<%= @announcement.length %>
+		</div>
+    </div>
+
+	<div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>Horario:</strong>
+		</div>
+        <div class="col-5">
+			<%= @announcement.schedule %>
+		</div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>Divisón:</strong>
+        </div>
+        <div class="col-5">
+            <%= @announcement.faculty %>
+        </div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>Departamento:</strong>
+        </div>
+        <div class="col-5">
+            <%= @announcement.department %>
+        </div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>Aula:</strong>
+        </div>
+        <div class="col-5">
+            <%= @announcement.classroom %>
+        </div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+			<strong>lugar:</strong>
+		</div>
+        <div class="col-5">
+			<%= @announcement.location %>
+		</div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+			<strong>Objetivo General:</strong>
+		</div>
+        <div class="col-5">
+            <%= @announcement.summary %>  			
+	 	</div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>Resumen Instructor:</strong>
+        </div>
+        <div class="col-5">
+            <%= @announcement.cv_resume %>            
+        </div>
+    </div>
+
+	<div class="btn-group">
+	  <%= link_to 'Editar',  edit_announcement_path(@announcement), class: "btn btn-primary" %>
+	    <%= link_to 'Regresar', announcements_path, class: "btn btn-primary" %>
+    </div>
+</div>
+
+
+
+
