@@ -1,0 +1,20 @@
+<div class="container">
+	<br>
+    <h1> Nuevo grupo </h1>
+    <hr>
+</div>
+
+<%= form_with scope: :group, url: groups_path, local: true do |form| %>
+	
+  
+	<div class="containerb">
+	  	<div class="form">
+				<%= form.label :name_program, 'Nombre Curso: ', class: " m-2 p-2" %><br>
+				<%= form.text_field :name_program, required: true , class: "form-control m-2 p-2" %>
+	  	</div>
+
+    <%= form.submit 'Guardar', :status => "guardar", class: "btn btn-success m-2 p-2" %>
+    <%= link_to 'Regresar', groups_path, class: "btn btn-primary" %>
+	</div>
+<% end %>
+

@@ -1,8 +1,10 @@
 <div class = "container mt-2">
     <div class = "row align-items-center">
         <div class = "col-7">
+            <br>
             <h1>Convocatorias</h1>
         </div>
+        <hr>
 
         <div class = "col-2">
             <%= link_to 'Agregar Convocatoria', new_announcement_path, class: "btn btn-primary" %>
@@ -13,17 +15,12 @@
 <div class = "mt-5 container">
   <% @announcements.each do |announcement| %>
    <div class="row align-items-center border mb-4 p-2">
-            <div class="col-2 border-right">
-            	<%= announcement.name_program %>
-           	</div>
-            <div class="col-2">
-            	Instructor: <%= announcement.instructor %>
-  					</div>
-  					<div class="col-2">
-  						<%= announcement.summary %>
-  					</div>
-  					<div class="col-2 border-left">
-                <div class="btn-group">
+            <div class="col-9 border-right" >
+              <%= announcement.name_program %>
+            </div>
+
+            <div class="col-3 border-left">
+                <div class="btn-group float-right">
                     <%= link_to 'Ver', announcement_path(announcement), class: "btn btn-primary" %>
                     <%= link_to 'Editar', edit_announcement_path(announcement), class: "btn btn-primary" %>
                     <%= link_to 'Borrar', announcement_path(announcement),

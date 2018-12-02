@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <br>
+        <h1>Solicitudes de 
+            <%= @group.name_program %>
+        </h1>
+    </div>
+
+    <hr>
+    <h2>Alumnos</h2>
+
+    <% @group.students.each do |student| %>
+    <div class="row border-bottom  m-1 p-1">
+        <div class="">
+            <%= student.name %>
+            <%= student.last_name %>
+        </div>
+    </div>
+    <% end %>
+    <div class = "btn-group">
+            <%= link_to 'Agregar grupo', new_group_student_path(@group), class: "btn btn-primary" %>
+        </div>
+    <div class="btn-group ">
+        <%= link_to 'Regresar', groups_path, class: "btn btn-primary" %>
+    </div>
+</div>

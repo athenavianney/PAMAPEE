@@ -7,31 +7,30 @@
         <hr>
     </div>
 
-    <hr>
-	<div class="row align-items-center m-2 p-2">
+    <div class="row align-items-center m-2 p-2">
         <div class="col-3">
             <strong>Instructor:</strong>
         </div>
         <div class="col-5">
-			<%= @announcement.instructor %>
-		</div>
+            <%= @announcement.id %>
+        </div>
     </div>
 
     <div class="row align-items-center m-2 p-2">
         <div class="col-3">
-        	<strong>Inicio inscripción:</strong>
-    	</div>
+            <strong>Inicio inscripción:</strong>
+        </div>
         <div class="col-5">
             <%= @announcement.start_registration %>
-		</div>
+        </div>
     </div>
 
     <div class="row align-items-center m-2 p-2">
         <div class="col-3">
-			<strong>Fin inscripción:</strong>
-		</div>
-        <div class="col-5">	
-			<%= @announcement.end_registration %>
+            <strong>Fin inscripción:</strong>
+        </div>
+        <div class="col-5"> 
+            <%= @announcement.end_registration %>
         </div>
     </div>
 
@@ -56,24 +55,24 @@
     <div class="row align-items-center m-2 p-2">
         <div class="col-3">
             <strong>Duracion:</strong>
-		</div>
+        </div>
         <div class="col-5">
-        	<%= @announcement.length %>
-		</div>
-    </div>
-
-	<div class="row align-items-center m-2 p-2">
-        <div class="col-3">
-            <strong>Horario:</strong>
-		</div>
-        <div class="col-5">
-			<%= @announcement.schedule %>
-		</div>
+            <%= @announcement.length %>
+        </div>
     </div>
 
     <div class="row align-items-center m-2 p-2">
         <div class="col-3">
-            <strong>Divisón:</strong>
+            <strong>Horario:</strong>
+        </div>
+        <div class="col-5">
+            <%= @announcement.schedule %>
+        </div>
+    </div>
+
+    <div class="row align-items-center m-2 p-2">
+        <div class="col-3">
+            <strong>División:</strong>
         </div>
         <div class="col-5">
             <%= @announcement.faculty %>
@@ -100,20 +99,20 @@
 
     <div class="row align-items-center m-2 p-2">
         <div class="col-3">
-			<strong>lugar:</strong>
-		</div>
+            <strong>Especificaciones lugar:</strong>
+        </div>
         <div class="col-5">
-			<%= @announcement.location %>
-		</div>
+            <%= @announcement.location %>
+        </div>
     </div>
 
     <div class="row align-items-center m-2 p-2">
         <div class="col-3">
-			<strong>Objetivo General:</strong>
-		</div>
+            <strong>Objetivo General:</strong>
+        </div>
         <div class="col-5">
-            <%= @announcement.summary %>  			
-	 	</div>
+            <%= @announcement.summary %>            
+        </div>
     </div>
 
     <div class="row align-items-center m-2 p-2">
@@ -125,9 +124,9 @@
         </div>
     </div>
 
-	<div class="btn-group">
-	  <%= link_to 'Editar',  edit_announcement_path(@announcement), class: "btn btn-primary" %>
-	    <%= link_to 'Regresar', announcements_path, class: "btn btn-primary" %>
+    <div class="btn-group">
+        <%= link_to 'Editar',  edit_announcement_path(@announcement), class: "btn btn-primary" %>
+        <%= link_to 'Regresar', announcements_path, class: "btn btn-primary" %>
     </div>
 </div>
 
