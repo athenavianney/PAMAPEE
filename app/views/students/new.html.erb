@@ -17,8 +17,8 @@
 				<%= form.text_field :last_name, required: true , class: "form-control m-2 p-2" %>
 	  	</div>
 
+	    <%= form.submit 'Registrar Alumno', class: "btn btn-success m-2 p-2" %>
+	    <%= link_to 'Regresar', group_path(@group), class: "btn btn-primary" %>
 	</div>
-    <%= form.submit 'Registrar Alumno', class: "btn btn-success m-2 p-2" %>
-    <%= link_to 'Regresar', group_path(@group), class: "btn btn-primary" %>
 <% end %>
 

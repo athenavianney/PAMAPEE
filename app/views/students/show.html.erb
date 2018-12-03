@@ -1,0 +1,21 @@
+<div class="container">
+    <div>
+        <br>
+        <h1>Lista de alumnos
+            <%= @group.name_program %>
+        </h1>
+    </div>
+
+    <hr>
+    <% @group.students.where(:status => 'aceptado').each do |student| %>
+    <div class="row align-items-center border-bottom  p-1">
+        <div class="container">
+            <%= student.name %>
+            <%= student.last_name %>
+        </div>
+        
+    </div>
+    <% end %>
+    <br>
+        <%= link_to 'Regresar', groups_path, class: "btn btn-primary" %>
+</div>

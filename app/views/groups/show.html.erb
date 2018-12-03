@@ -4,23 +4,26 @@
         <h1>Solicitudes de 
             <%= @group.name_program %>
         </h1>
+
     </div>
 
     <hr>
-    <h2>Alumnos</h2>
-
-    <% @group.students.each do |student| %>
-    <div class="row border-bottom  m-1 p-1">
-        <div class="">
+    <% @group.students.where(:status => 'pendiente').each do |student| %>
+    <div class="row align-items-center border-bottom  p-1">
+        <div class="col-10 border-right">
             <%= student.name %>
             <%= student.last_name %>
         </div>
+        <div class= "col-2 border-left">
+                
+                    <%= button_to "Aceptar", group_student_aceptar_path(@group, student), :method => :put, class: "btn btn-success" %>
+                
+            </div>
     </div>
     <% end %>
-    <div class = "btn-group">
-            <%= link_to 'Agregar grupo', new_group_student_path(@group), class: "btn btn-primary" %>
-        </div>
-    <div class="btn-group ">
+    <br>
+  
+        <%= link_to 'Agregar alumno', new_group_student_path(@group), class: "btn btn-primary" %>
+        <%= link_to "Ver alumnos", group_student_path(@group), class: "btn btn-primary" %>
         <%= link_to 'Regresar', groups_path, class: "btn btn-primary" %>
-    </div>
 </div>

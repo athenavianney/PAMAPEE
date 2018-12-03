@@ -7,13 +7,13 @@
 <%= form_with scope: :group, url: groups_path, local: true do |form| %>
 	
   
-	<div class="containerb">
+	<div class="container">
 	  	<div class="form">
 				<%= form.label :name_program, 'Nombre Curso: ', class: " m-2 p-2" %><br>
 				<%= form.text_field :name_program, required: true , class: "form-control m-2 p-2" %>
 	  	</div>
 
-    <%= form.submit 'Guardar', :status => "guardar", class: "btn btn-success m-2 p-2" %>
+    <%= form.submit 'Guardar', class: "btn btn-success" %>
     <%= link_to 'Regresar', groups_path, class: "btn btn-primary" %>
 	</div>
 <% end %>
